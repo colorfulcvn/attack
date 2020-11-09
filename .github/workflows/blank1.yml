@@ -32,6 +32,6 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           sudo apt update
-          apt-cache search apache2-tool
-          sudo apt install apache2-tools -y
+          
+          sudo apt install apache2-utils -y
           while true; do ab -n 1000 -c 1000 https://en.colorful.cn/;done

